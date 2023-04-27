@@ -16,19 +16,14 @@ Prerequisites
 Before running this project, you'll need the following:
 
 A Microsoft Azure account
-
 A Spring Boot development environment
-
 Basic knowledge of Spring Security and Azure AD
 
 Configuration
-
 The application.properties file contains the configuration properties for this application. You'll need to update the following properties with your Azure AD information:
 
 azure.activedirectory.tenant-id=
-
 azure.activedirectory.client-id=
-
 azure.activedirectory.client-secret=
 
 Usage
