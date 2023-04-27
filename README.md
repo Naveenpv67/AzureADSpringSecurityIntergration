@@ -9,9 +9,13 @@ To get started with this project, follow these steps:
 Clone this repository to your local machine.
 
 Configure your Azure AD tenant and register your Spring Boot application in Azure AD.
+
 Update the application.properties file with your Azure AD tenant ID, client ID, and client secret.
+
 Start the Spring Boot application.
+
 Open a browser and navigate to http://localhost:8080 to see the application in action.
+
 Prerequisites
 Before running this project, you'll need the following:
 
