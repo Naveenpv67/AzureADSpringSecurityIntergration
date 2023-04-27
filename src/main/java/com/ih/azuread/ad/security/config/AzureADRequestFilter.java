@@ -50,7 +50,13 @@ public class AzureADRequestFilter extends OncePerRequestFilter {
 			String jwtToken = authorizationHeader.replace("Bearer ", "");
 
 			JwtDecoder jwtDecoder = JwtDecoders.fromIssuerLocation(issuerUri);
-			Jwt jwt = jwtDecoder.decode(jwtToken);
+			Jwt jwt;
+			try {
+				jwt = jwtDecoder.decode(jwtToken);
+			} catch (JwtException e) {
+				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+				return;
+			}
 
 			// Below validations are handled by default while decoding through -->
 			// jwtDecoder.decode(jwtToken);

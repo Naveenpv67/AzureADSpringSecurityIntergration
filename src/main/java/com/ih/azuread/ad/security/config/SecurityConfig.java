@@ -20,6 +20,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
+	@Autowired
+	private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
+
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.headers().frameOptions().disable();
@@ -27,10 +30,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 		.anyRequest().authenticated().and().cors().disable()
 				.csrf().disable().httpBasic().disable().exceptionHandling()
+	            
 				// IMPORTANT!!
-				.authenticationEntryPoint(jwtAuthenticationEntryPoint).accessDeniedHandler(
-						(request, response, authException) -> response.sendError(HttpServletResponse.SC_FORBIDDEN));
-
+				.authenticationEntryPoint(jwtAuthenticationEntryPoint)
+				.accessDeniedHandler((request, response, authException) -> response.sendError(HttpServletResponse.SC_FORBIDDEN));
 		// IMPORTANT!!
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
