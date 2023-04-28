@@ -56,9 +56,14 @@ Sample Access Token
 --data-urlencode 'resource=00000002-0000-0000-c000-000000000000'
 
 Steps to Validate the AAD Access Token in Spring
+
 1.Obtain the access token from the HTTP request header.
+
 2.Use JwtDecoder to parse the access token into Jwt.
+
 3.Verify aud, iss, nbf, exp claims in access token.
+
 4.Extract information from JWT in AadOAuth2AuthenticatedPrincipal object after a successful verification.
+
 5.Save the AADOAuth2AuthenticatedPrincipal into SecurityContext.
 
