@@ -56,7 +56,7 @@ Sample Access Token
 --data-urlencode 'resource=00000002-0000-0000-c000-000000000000'
 
 Helpful Resource:
-https://github.com/Azure-Samples/azure-spring-boot-samples/tree/main/aad/spring-cloud-azure-starter-active-directory/web-client-access-resource-server/aad-resource-server
+[README.md](https://github.com/Azure-Samples/azure-spring-boot-samples/tree/main/aad/spring-cloud-azure-starter-active-directory/web-client-access-resource-server/aad-resource-server#readme)
 
 Steps to Validate the AAD Access Token in Spring
 
